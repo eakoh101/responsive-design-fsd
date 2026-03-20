@@ -31,23 +31,18 @@ h1 {
 }
 
 h2 {
+  margin-top: 25px;
   font-weight: 600;
-  font-size: 1.25rem;
-  letter-spacing: 0.2px;
-  color: #183b56;
-  position: absolute;
-  top: 170px;
-  left: 30px;
+  font-size: 1.2rem;
+  color: #183b56
 }
 
 h4 {
+  margin-top: 10px;
   font-family: "DM Sans", sans-serif;
   color: #5a7184;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  position: absolute;
-  top: 210px;
-  left: 30px;
 }
 
 h3 {
@@ -63,19 +58,31 @@ h3 {
 }
 
 .categories {
-  max-width: 1900px;
-  min-width: 450px;
-  width: 100vw;
-  height: 50vh;
+  max-width: 1200px; /* ปรับให้พอดีกับเนื้อหา */
+  margin: 0 auto;    /* จัดกึ่งกลางหน้าจอ */
+  padding: 20px;
 }
 
 .row-1,
 .row-2 {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* สำคัญ: ทำให้ Responsive */
   justify-content: center;
 }
-
+.job-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* จัดชิดซ้ายตามแบบ */
+  position: relative;
+  width: 280px;
+  height: auto; /* ปล่อยให้ความสูงขยายตามเนื้อหา */
+  min-height: 250px;
+  padding: 30px;
+  margin: 15px;
+  border: 1px solid #ededed;
+  border-radius: 12px;
+  transition: 0.3s;
+}
 .job-item,
 .job-more {
   position: relative;
@@ -168,3 +175,21 @@ h3 {
 }
 
 /* Start coding here */
+
+@media (min-width: 768px){
+.topic h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+.job-item, .job-more {
+    width: 100%;    /* เต็มจอในมือถือ */
+    max-width: 350px;
+    margin: 10px 0;
+  }
+
+  .row-1, .row-2 {
+    flex-direction: column; /* เรียงต่อกันเป็นแนวตั้ง */
+    align-items: center;
+  }
+}
